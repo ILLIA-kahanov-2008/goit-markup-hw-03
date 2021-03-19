@@ -10,8 +10,17 @@
   --logo-font: "Raleway", sans-serif;
   --filter-color: #F5F4FA;
     /* --dark-bg-text-color: #9da4bd;
-     */
-  
+     */  
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
 }
 
 body {
@@ -23,9 +32,26 @@ body {
   background-color: var(--body-bg-color);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin-top: 0;
+}
+
 address {
   font-style: normal;
   color: var(--white-text);
+  margin-top: 20px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .visually-hidden {
@@ -39,12 +65,49 @@ address {
   overflow: hidden;
 }
 
+.list, .portfolio-list {
+  list-style: none;  
+  color: inherit;
+  margin: 0;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color:lightskyblue;
+}
+
+.header .container {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  
+}
+
+.header {
+  height: 80px;
+  padding-top: 24px;
+  border-bottom: 1px solid #ECECEC;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;  
+}
+
+.menu, .contacts {
+  display: inline-flex;
+}
+
 .header-link {
   text-decoration: none;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  color: var(--title-color);
+  color: var(--title-color);  
 }
 
 .contacts .header-link {
@@ -55,11 +118,22 @@ address {
 .header-link:focus, .footer-link:focus {
   color: var(--accent-color);
 }
+/* --logo-stilization-- */
+.logo-link {
+  margin-right: 90px;
+  text-decoration: none;  
+}
 
+.logo-link>span:first-child {
+  color: var(--accent-color);
+}
 
+.navigation .logo-link span+span {
+ color: #000000;
+}
 
-.list, .portfolio-list {
-  list-style: none;  
+.footer .logo-link span+span {
+  color: var(--white-text);
 }
 
 .logo-text {
@@ -70,21 +144,9 @@ address {
   letter-spacing: 0.03em;
 }
 
-.header-logo-web, .footer-logo-web {
-  color: var(--accent-color);
-}
-
-.header-logo-studio {
- color: #000000;
-}
-
-.footer-logo-studio {
-  color: var(--white-text);
-}
-
-.hero, .team, .work-about {
+/* .hero, .team, .work-about {
   text-align: center;
-}
+} */
 
 .hero, .footer {
   background-color: var(--dark-bg-color);
@@ -140,14 +202,27 @@ address {
   color: var(--title-color);
 }
 
+.footer {
+  height: 252px;
+}
+
+.footer .logo-link {
+  display: inline-block;
+  margin-top: 60px;
+}
+
+.footer-contacts-item {
+  margin-top: 9px;
+}
+
 .footer-link{
   text-decoration: none;
   color: rgba(255, 255, 255, 0.6);
+  
 }
 
 /* Portfolio.html */
-
-.filter {
+.filter-button {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.625;
@@ -156,14 +231,13 @@ address {
   background-color: var(--filter-color);
 }
 
-.filter:hover,
-.filter:focus {
+.filter-button:hover,
+.filter-button:focus {
   color: var(--white-text);
   background-color: var(--accent-color);
 }
 
-.portfolio-item-title {
-  
+.portfolio-item-title {  
 font-weight: 700;
 font-size: 18px;
 line-height: 2;
