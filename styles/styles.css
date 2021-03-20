@@ -26,7 +26,7 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  line-height: 1.71;
+  line-height: 1.714;
   letter-spacing: 0.03em;
   color: var(--main-text-color);
   background-color: var(--body-bg-color);
@@ -45,7 +45,6 @@ p {
 address {
   font-style: normal;
   color: var(--white-text);
-  margin-top: 20px;
 }
 
 img {
@@ -69,6 +68,7 @@ img {
   list-style: none;  
   color: inherit;
   margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -77,29 +77,33 @@ img {
   padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
-  background-color:lightskyblue;
+  background-color:lightskyblue; /* delete-before-submit */
+}
+
+/* --header_s-- */
+.header {
+  border-bottom: 1px solid #ECECEC;
 }
 
 .header .container {
   display: flex;
   justify-content:space-between;
-  align-items: center;
-  
-}
-
-.header {
-  height: 80px;
-  padding-top: 24px;
-  border-bottom: 1px solid #ECECEC;
+  align-items: center;  
 }
 
 .navigation {
   display: flex;
-  align-items: center;  
+  align-items: center; 
+  justify-content:space-between; 
 }
 
 .menu, .contacts {
   display: inline-flex;
+}
+
+.menu-item:not(:last-child),
+.contacts-item:not(:last-child) {
+  margin-right: 40px;
 }
 
 .header-link {
@@ -120,9 +124,15 @@ img {
 }
 /* --logo-stilization-- */
 .logo-link {
-  margin-right: 90px;
+  display: inline-block;
   text-decoration: none;  
 }
+ 
+.navigation .logo-link {
+  margin-right: 90px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+} 
 
 .logo-link>span:first-child {
   color: var(--accent-color);
@@ -141,13 +151,29 @@ img {
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
-  letter-spacing: 0.03em;
 }
 
-/* .hero, .team, .work-about {
-  text-align: center;
-} */
+/* --footer-- */
+.footer .logo-link {
+  padding-top: 60px;
+  padding-bottom: 20px;
+  margin: 0;
+}
 
+.list.footer-contacts {
+  padding-bottom: 60px;
+}
+
+.footer-contacts-item:not(:last-child) {
+  padding-bottom: 9px;
+}
+
+.footer-link{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);  
+}
+
+/* --index.html-- */
 .hero, .footer {
   background-color: var(--dark-bg-color);
 }
@@ -200,25 +226,6 @@ img {
   font-size: 16px;
   line-height: 1.19;
   color: var(--title-color);
-}
-
-.footer {
-  height: 252px;
-}
-
-.footer .logo-link {
-  display: inline-block;
-  margin-top: 60px;
-}
-
-.footer-contacts-item {
-  margin-top: 9px;
-}
-
-.footer-link{
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.6);
-  
 }
 
 /* Portfolio.html */
