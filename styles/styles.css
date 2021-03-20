@@ -9,6 +9,7 @@
   --dark-bg-color: #2F303A;
   --logo-font: "Raleway", sans-serif;
   --filter-color: #F5F4FA;
+  --one-item: 1;
     /* --dark-bg-text-color: #9da4bd;
      */  
 }
@@ -80,7 +81,10 @@ img {
   background-color:lightskyblue; /* delete-before-submit */
 }
 
-/* --header_s-- */
+.section {
+  padding-top: 94px;
+}
+/* --header-- */
 .header {
   border-bottom: 1px solid #ECECEC;
 }
@@ -112,6 +116,8 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--title-color);  
+  padding-top: 32px;
+  padding-bottom: 31px;
 }
 
 .contacts .header-link {
@@ -229,6 +235,21 @@ img {
 }
 
 /* Portfolio.html */
+.portfolio {
+  padding-bottom: 94px;
+}
+
+.portfolio-filter-list {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding-bottom: 50px;
+}
+
+.portfolio-filter-item:not(:last-child) {
+  margin-right: 8px;
+}
+
 .filter-button {
   font-weight: 500;
   font-size: 16px;
@@ -236,23 +257,51 @@ img {
   text-align: center;
   color: var(--title-color);
   background-color: var(--filter-color);
+  background-color: #F5F4FA;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 22px;
+  cursor: pointer;
 }
 
 .filter-button:hover,
 .filter-button:focus {
   color: var(--white-text);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  border:none;
+  border-radius: 4px;  
+}
+
+.portfolio-list{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.portfolio-item {
+  flex-basis: calc((100% - (30px * var(--one-item) * 3)) / (var(--one-item) * 3));
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.portfolio-item-text {
+  padding: 20px 24px;
+  text-align: center;
 }
 
 .portfolio-item-title {  
-font-weight: 700;
-font-size: 18px;
-line-height: 2;
-letter-spacing: 0.06em;
-color: var(--title-color)
+  margin: 0;  
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--title-color)
 }
 
 .portfolio-item-filter {
+  margin: 0;
   font-size: 16px;
   line-height: 1.875;
 }
