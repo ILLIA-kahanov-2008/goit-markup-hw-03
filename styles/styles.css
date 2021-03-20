@@ -4,8 +4,8 @@
   --main-text-color: #757575;
   --accent-color: #2196F3;
   --title-color: #212121;
-  --white-text: #ffffff;
-  --body-bg-color: #E5E5E5; 
+  --white-color: #FFF;
+  --team-bg-color: #E5E5E5; 
   --dark-bg-color: #2F303A;
   --logo-font: "Raleway", sans-serif;
   --filter-color: #F5F4FA;
@@ -30,7 +30,7 @@ body {
   line-height: 1.714;
   letter-spacing: 0.03em;
   color: var(--main-text-color);
-  background-color: var(--body-bg-color);
+  background-color: var(--white-color);
 }
 
 h1,
@@ -41,11 +41,12 @@ h5,
 h6,
 p {
 	margin-top: 0;
+  margin-bottom: 0;
 }
 
 address {
   font-style: normal;
-  color: var(--white-text);
+  color: var(--white-color);
 }
 
 img {
@@ -78,7 +79,7 @@ img {
   padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
-  background-color:lightskyblue; /* delete-before-submit */
+  /* background-color:lightskyblue; */
 }
 
 .section {
@@ -149,7 +150,7 @@ img {
 }
 
 .footer .logo-link span+span {
-  color: var(--white-text);
+  color: var(--white-color);
 }
 
 .logo-text {
@@ -184,27 +185,43 @@ img {
   background-color: var(--dark-bg-color);
 }
 
+.hero {
+  text-align: center;
+} 
+
+.hero-content {
+  max-width: 700px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  /* background-color: lightgray; */
+}
+
 .hero-title {
+  padding-bottom: 30px;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.364;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--white-text)
+  color: var(--white-color)
 }
 
 .button {
+  padding: 10px 32px;
   background-color: var(--accent-color);
   font-weight: 700;
   font-size: 16px;
   line-height: 1.875;
   letter-spacing: 0.06em;
-  color: var(--white-text);
+  color: var(--white-color);
   cursor: pointer;
   /* display: flex;
-  align-items: center;
+  align-items: center;*/
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;  */
+  border-radius: 4px;
+  border: none;
 }
 
 .button:hover,
@@ -213,13 +230,29 @@ img {
 }
 
 .title {
+  padding-bottom: 50px;
+  text-align: center;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.167;
-  color: var(--title-color);
+  color: var(--title-color);  
+}
+
+.features-list, 
+.work-about-list, 
+.team-member-list {
+  display: flex;
+  margin-left: -30px;
+}
+
+.features-item,
+.team-member-item {
+  flex-basis: calc((100% - (30px * var(--one-item) * 4)) / (var(--one-item) * 4));
+  margin-left: 30px;
 }
 
 .features-item-title {
+  padding-bottom: 10px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.19;
@@ -227,7 +260,37 @@ img {
   color: var(--title-color);
 }
 
+.features-item-text {
+  padding-bottom: 6px;
+}
+
+.work-about-item {
+  flex-basis: calc((100% - (30px * var(--one-item) * 3)) / (var(--one-item) * 3));
+  margin-left: 30px;
+}
+
+.team {
+  padding-bottom: 94px;
+  background-color: var(--team-bg-color);
+}
+
+.team .title {
+  padding-top: 94px;
+}
+
+.team-member-item {
+  background-color: var(--white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.team-member-info {
+  padding: 30px 0;
+  text-align: center;  
+}
+
 .team-member-name {
+  padding-bottom: 10px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
@@ -266,7 +329,7 @@ img {
 
 .filter-button:hover,
 .filter-button:focus {
-  color: var(--white-text);
+  color: var(--white-color);
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
   border:none;
@@ -281,6 +344,8 @@ img {
 }
 
 .portfolio-item {
+  background-color: var(--white-color);
+  border: 1px solid #EEEEEE;
   flex-basis: calc((100% - (30px * var(--one-item) * 3)) / (var(--one-item) * 3));
   margin-left: 30px;
   margin-top: 30px;
@@ -288,11 +353,10 @@ img {
 
 .portfolio-item-text {
   padding: 20px 24px;
-  text-align: center;
 }
 
 .portfolio-item-title {  
-  margin: 0;  
+  margin-bottom: 4px ;  
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -301,7 +365,6 @@ img {
 }
 
 .portfolio-item-filter {
-  margin: 0;
   font-size: 16px;
   line-height: 1.875;
 }
